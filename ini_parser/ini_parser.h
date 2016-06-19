@@ -2,6 +2,7 @@
 #define QIHOO_INI_PARSER_H_
 
 #include <string>
+#include <map>
 
 namespace qh
 {
@@ -35,8 +36,12 @@ namespace qh
         const std::string& Get(const std::string& key, bool* found);
 
         const std::string& Get(const std::string& section, const std::string& key, bool* found);
+        map<string, string> GetMINI();
+        void Add(string key, string value);
+
 
     private:
+        map<string, string> mINI;
     };
 }
 
